@@ -11,6 +11,7 @@ public:
 	string description;
 	int attackDamage = 0;
 	bool consumable = false;
+	int healthEffect = 0;
 };
 class enemy{
 public:
@@ -111,7 +112,6 @@ int main() {
 			//cout << "What would you like to take? ";
 			string requestedItem;
 			cin >> requestedItem;
-			cout << requestedItem << endl;
 			bool found = false;
 			int itemIndex = 0;
 			for(item thisItem : player.location->items){
@@ -142,8 +142,8 @@ int main() {
 			cin >> requestedItem;
 			bool found = false;
 			for(item thisItem : player.inventory){
-				found = true;
 				if(thisItem.name == requestedItem){
+					found = true;
 					cout << "\n Item details" << endl;
 					cout << "==============" << endl;
 					cout << "Name: " + thisItem.name << endl;
@@ -197,6 +197,29 @@ int main() {
 			}
 			if(!found){
 				cout << "That enemy could not be found." << endl;
+			}
+		} else if(action == "eat"){
+			string requestedItem;
+			//cout << "What item would you like to examine?" << endl;
+			cin >> requestedItem;
+			bool found = false;
+			int itemIndex = 0;
+			for(item thisItem : player.inventory){
+				if(thisItem.name == requestedItem){
+					found = true;
+					if(thisItem.consumable){
+						player.health = player.health + thisItem.healthEffect;
+						cout << "You gained " + to_string(thisItem.healthEffect) + " health." << endl;
+						player.inventory.erase(player.inventory.begin() + itemIndex);
+					} else{
+						cout << "You do not feel eating that would be beneficial." << endl;
+					}
+					break;
+				}
+				itemIndex++;
+			}
+			if(!found){
+				cout << "You do not have that item." << endl;
 			}
 		}
 	}
