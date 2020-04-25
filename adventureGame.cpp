@@ -29,6 +29,7 @@ public:
 	vector<item> inventory;
 	int health = 100;
 	area *oldLocation;
+	bool running;
 };
 
 class area{
@@ -58,9 +59,9 @@ int main() {
 	#include "areas.h"
 	//Place player
 	player.location = &startingPoint;
+	player.running = true;
 	//Start game
-	bool running = true;
-	while(running){
+	while(player.running){
 		if(player.health == 0){
 			cout << "You died!" << endl;
 			break;

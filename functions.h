@@ -2,6 +2,10 @@ void fixPosition(void *playerVoid){
 	character *player = (character*)playerVoid;
 	player->location = player->oldLocation;
 }
+void leave(void *playerVoid){
+	character *player = (character*)playerVoid;
+	player->running = false;
+}
 void actionParser(void *playerVoid){
 	character *player = (character*)playerVoid;
 	string action;
