@@ -41,6 +41,8 @@ public:
 	area *oldLocation;
 };
 int main() {
+	//Clear screen
+	cout << "\033[2J\033[1;1H";
 	//Setup player;
 	character player;
 	cout << "Player name: ";
