@@ -183,7 +183,7 @@ int main() {
 								player.location->enemies.erase(player.location->enemies.begin() + enemyIndex);
 							} else {
 								cout << "The " + thisEnemy.name + " attacks you!" << endl;
-								cout << "You took " + to_string(thisEnemy.weapon.attackDamage) + " damage.";
+								cout << "You took " + to_string(thisEnemy.weapon.attackDamage) + " damage." << endl;
 								player.health = player.health - thisEnemy.weapon.attackDamage;
 								cout << "You now have " + to_string(player.health) + " health." << endl;
 							}
@@ -209,7 +209,12 @@ int main() {
 					found = true;
 					if(thisItem.consumable){
 						player.health = player.health + thisItem.healthEffect;
-						cout << "You gained " + to_string(thisItem.healthEffect) + " health." << endl;
+						string change = "gained ";
+						if(thisItem.healthEffect < 0){
+							change = "lost ";
+							thisItem.healthEffect = thisItem.healthEffect * -1;
+						}
+						cout << "You " + change + to_string(thisItem.healthEffect) + " health." << endl;
 						player.inventory.erase(player.inventory.begin() + itemIndex);
 					} else{
 						cout << "You do not feel eating that would be beneficial." << endl;
