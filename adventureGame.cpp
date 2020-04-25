@@ -198,7 +198,7 @@ int main() {
 			if(!found){
 				cout << "That enemy could not be found." << endl;
 			}
-		} else if(action == "eat"){
+		} else if(action == "eat" || action == "drink"){
 			string requestedItem;
 			//cout << "What item would you like to examine?" << endl;
 			cin >> requestedItem;
