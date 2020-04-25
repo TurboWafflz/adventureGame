@@ -16,6 +16,7 @@ startingPoint.north = &northPlace;
 startingPoint.east = &nowhere;
 startingPoint.south = &nowhere;
 startingPoint.west = &nowhere;
+startingPoint.function = &actionParser;
 ///North Place
 northPlace.north = &nowhere;
 northPlace.east = &nowhere;
