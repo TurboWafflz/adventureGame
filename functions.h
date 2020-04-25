@@ -1,7 +1,8 @@
-void startingPointFunc(character *player){
+void startingPointFunc(void *player){
 	cout << "Test" << endl;
 }
-void actionParser(character *player){
+void actionParser(void *playerVoid){
+	character *player = (character*)playerVoid;
 	string action;
 	//Get action from player
 	cin >> action;

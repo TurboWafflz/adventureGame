@@ -4,7 +4,9 @@
 #include <bits/stdc++.h>
 #include <algorithm>
 using namespace std;
+class area;
 
+void actionParser(void* a);
 class item{
 public:
 	string name;
@@ -20,6 +22,15 @@ public:
 	int health = 100;
 	item weapon;
 };
+class character{
+public:
+	area *location;
+	string name;
+	vector<item> inventory;
+	int health = 100;
+	area *oldLocation;
+};
+
 class area{
 public:
 	string description;
@@ -32,15 +43,7 @@ public:
 	bool invalid = false;
 	vector<item> items;
 	vector<enemy> enemies;
-	void (*function)(void *player);
-};
-class character{
-public:
-	area *location;
-	string name;
-	vector<item> inventory;
-	int health = 100;
-	area *oldLocation;
+	void (*function)(void *player) = &actionParser;
 };
 #include "functions.h"
 int main() {
