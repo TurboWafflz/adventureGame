@@ -16,6 +16,7 @@ public:
 	string name;
 	vector<item> inventory;
 	int health = 100;
+	item weapon;
 };
 class area{
 public:
@@ -175,6 +176,11 @@ int main() {
 									player.location->items.push_back(drop);
 								}
 								player.location->enemies.erase(player.location->enemies.begin() + enemyIndex);
+							} else {
+								cout << "The " + thisEnemy.name + " attacks you!" << endl;
+								cout << "You took " + to_string(thisEnemy.weapon.attackDamage) + " damage.";
+								player.health = player.health - thisEnemy.weapon.attackDamage;
+								cout << "You now have " + to_string(player.health) + " health." << endl;
 							}
 						}
 					}
