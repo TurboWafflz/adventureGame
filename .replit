@@ -1,2 +1,2 @@
 language = "cpp"
-run = "g++ adventureGame.cpp -o adventureGame; ./adventureGame"
+run = "make; ./adventureGame"
