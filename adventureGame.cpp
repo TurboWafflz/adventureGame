@@ -10,7 +10,7 @@ public:
 	string name;
 	string description;
 	int attackDamage = 0;
-	consumable = false;
+	bool consumable = false;
 };
 class enemy{
 public:
