@@ -31,6 +31,7 @@ public:
 	bool invalid = false;
 	vector<item> items;
 	vector<enemy> enemies;
+	void *function();
 };
 class character{
 public:
@@ -46,7 +47,7 @@ int main() {
 	//Setup player;
 	character player;
 	cout << "Player name: ";
-	cin >> player.name;
+	getline(cin, player.name);
 	#include "items.h"
 	#include "characters.h"
 	#include "areas.h"
@@ -107,9 +108,10 @@ int main() {
 			cout << "HP: " + to_string(player.health) << endl << endl;
 		} else if(action == "take"){
 			//Pick up an item
-			cout << "What would you like to take?" << endl;
+			//cout << "What would you like to take? ";
 			string requestedItem;
 			cin >> requestedItem;
+			cout << requestedItem << endl;
 			bool found = false;
 			int itemIndex = 0;
 			for(item thisItem : player.location->items){
@@ -136,7 +138,7 @@ int main() {
 			cout << endl;
 		} else if(action == "examine"){
 			string requestedItem;
-			cout << "What item would you like to examine?" << endl;
+			//cout << "What item would you like to examine?" << endl;
 			cin >> requestedItem;
 			bool found = false;
 			for(item thisItem : player.inventory){
@@ -156,7 +158,7 @@ int main() {
 			}
 		} else if(action == "attack"){
 			string requestedEnemy;
-			cout << "What do you want to attack?" << endl;
+			//cout << "What do you want to attack?" << endl;
 			cin >> requestedEnemy;
 			int enemyIndex = 0;
 			bool found = false;
@@ -164,7 +166,7 @@ int main() {
 				if(thisEnemy.name == requestedEnemy){
 					found = true;
 					string requestedItem;
-					cout << "What do you want to attack it with?" << endl;
+					//cout << "What do you want to attack it with?" << endl;
 					cin >> requestedItem;
 					bool found = false;
 					for(item &thisItem : player.inventory){
