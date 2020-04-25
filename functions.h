@@ -1,5 +1,6 @@
-void startingPointFunc(void *player){
-	cout << "Test" << endl;
+void fixPosition(void *playerVoid){
+	character *player = (character*)playerVoid;
+	player->location = player->oldLocation;
 }
 void actionParser(void *playerVoid){
 	character *player = (character*)playerVoid;

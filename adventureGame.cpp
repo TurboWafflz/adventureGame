@@ -65,10 +65,10 @@ int main() {
 			cout << "You died!" << endl;
 			break;
 		}
-		if(player.location->invalid){
-			cout << "You see no path in that direction." << endl;
-			player.location = player.oldLocation;
-		}
+		// if(player.location->invalid){
+		// 	cout << "You see no path in that direction." << endl;
+		// 	player.location = player.oldLocation;
+		// }
 		//Display shortened description if player has already visited the area, otherwise, display full description
 		if(not player.location->visited){
 			cout << player.location->description << endl;

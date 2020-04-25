@@ -1,6 +1,7 @@
 area nowhere;
-nowhere.description = "You find yourself in an invalid location. This should not be possible.";
+nowhere.description = "You see no path in that direction.";
 nowhere.invalid = true;
+nowhere.function = &fixPosition;
 area northPlace;
 northPlace.description = "You find yourself in another example area. North of the first and similarly useless. You see a tunnel to the south.";
 northPlace.shortDescription = "North example area [s]";
