@@ -153,5 +153,7 @@ void actionParser(void *playerVoid){
 		if(!found){
 			cout << "You do not have that item." << endl;
 		}
+	} else if(action == "look"){
+		player->location->visited = false;
 	}
 }

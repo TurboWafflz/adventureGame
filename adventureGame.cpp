@@ -78,6 +78,21 @@ int main() {
 		}
 		//Set location to visited
 		player.location->visited = true;
+		//List exits
+		cout << "[Exits:";
+		if(player.location->north != &nowhere){
+			cout << " n ";
+		}
+		if(player.location->east != &nowhere){
+			cout << " e ";
+		}
+		if(player.location->south != &nowhere){
+			cout << " s ";
+		}
+		if(player.location->west != &nowhere){
+			cout << " w ";
+		}
+		cout << "]\n";
 		//List items
 		for(item thisItem : player.location->items){
 			cout << "You see a " + thisItem.name << endl;
