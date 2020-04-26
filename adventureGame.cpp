@@ -54,9 +54,13 @@ int main() {
 	character player;
 	cout << "Player name: ";
 	getline(cin, player.name);
+	cout << "Loading items..." << endl;
 	#include "items.h"
+	cout << "Loading NPCs..." << endl;
 	#include "characters.h"
+	cout << "Loading map..." << endl;
 	#include "areas.h"
+	cout << "\033[2J\033[1;1H";
 	//Place player
 	player.location = &startingPoint;
 	player.running = true;
