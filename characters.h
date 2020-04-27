@@ -1,5 +1,5 @@
-enemy orc;
-orc.name = "orc";
-orc.health = 10;
-orc.inventory.push_back(orcEye);
-orc.weapon = sword;
+enemy japaneseThing;
+japaneseThing.name = "japanese-thing";
+japaneseThing.health = 10;
+japaneseThing.inventory.push_back(japaneseShards);
+japaneseThing.weapon = sword;
