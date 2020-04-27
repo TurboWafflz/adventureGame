@@ -99,11 +99,11 @@ int main() {
 		cout << "]\n";
 		//List items
 		for(item thisItem : player.location->items){
-			cout << "You see a " + thisItem.name << endl;
+			cout << "[ITEM] You see a " + thisItem.name << endl;
 		}
 		//List enemies
 		for(enemy thisEnemy : player.location->enemies){
-			cout << "You see a " + thisEnemy.name << endl;
+			cout << "[ENEMY] You see a " + thisEnemy.name << endl;
 		}
 		//Run function for area
 		player.location->function(&player);
