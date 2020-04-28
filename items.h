@@ -6,3 +6,4 @@ tickler.type = "WEAPON";
 item japaneseShards;
 japaneseShards.name = "japanese-shards";
 japaneseShards.description = "Shards of a destroyed Japanese thing.";
+japaneseShards.article = "some";

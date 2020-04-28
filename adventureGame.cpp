@@ -3,9 +3,9 @@
 #include <vector>
 #include <bits/stdc++.h>
 #include <algorithm>
+#include <readline/readline.h>
 using namespace std;
 class area;
-
 void actionParser(void* a);
 class item{
 public:
@@ -15,6 +15,7 @@ public:
 	bool consumable = false;
 	int healthEffect = 0;
 	string type = "ITEM";
+	string article = "a";
 };
 class enemy{
 public:
@@ -100,7 +101,7 @@ int main() {
 		cout << "]\n";
 		//List items
 		for(item thisItem : player.location->items){
-			cout << "[" + thisItem.type + "] You see a " + thisItem.name << endl;
+			cout << "[" + thisItem.type + "] You see " + thisItem.article + " " + thisItem.name << endl;
 		}
 		//List enemies
 		for(enemy thisEnemy : player.location->enemies){
