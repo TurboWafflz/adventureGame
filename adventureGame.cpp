@@ -14,6 +14,7 @@ public:
 	int attackDamage = 0;
 	bool consumable = false;
 	int healthEffect = 0;
+	string type = "ITEM";
 };
 class enemy{
 public:
@@ -99,7 +100,7 @@ int main() {
 		cout << "]\n";
 		//List items
 		for(item thisItem : player.location->items){
-			cout << "[ITEM] You see a " + thisItem.name << endl;
+			cout << "[" + thisItem.type + "] You see a " + thisItem.name << endl;
 		}
 		//List enemies
 		for(enemy thisEnemy : player.location->enemies){
